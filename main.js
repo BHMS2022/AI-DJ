@@ -3,6 +3,8 @@ leftWristX = 0;
 leftWristY = 0;
 rightWristX = 0;
 rightWristY = 0;
+scoreLeftWrist = 0;
+inNumberLeftWristY = "";
 function preload(){
     song = loadSound("music.mp3");
 }
@@ -18,10 +20,11 @@ function draw(){
     image(video, 0, 0, 600, 500);
     fill('red');
     stroke('red');
-    if(score > 0.2){
+    if(scoreLeftWrist > 0.2){
     circle(leftWristX, leftWristY, 20);
     inNumberLeftWristY = Number(LeftWristY);
     remove_decimals = floor(inNumberLeftWristY);
+    console.log("remove decimals = " + remove_decimals);
     volume = remove_decimals/500;
     document.getElementById("volume").innerHTML = volume;
     }
